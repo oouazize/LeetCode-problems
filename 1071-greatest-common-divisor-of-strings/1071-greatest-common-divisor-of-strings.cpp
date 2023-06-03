@@ -11,11 +11,6 @@ public:
             B = R;
             R = A % B;
         }
-        string s = str1.substr(0, B);
-        for (int i = 0; i < str1.size() || i < str2.size(); i += B) {
-            if (i < str1.size() && s != str1.substr(i, B)) return "";
-            if (i < str2.size() && s != str2.substr(i, B)) return "";
-        }
-        return str1.substr(0, B);
+        return (str1 + str2 == str2 + str1) ? str1.substr(0, B) : "";
     }
 };
